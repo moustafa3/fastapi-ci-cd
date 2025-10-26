@@ -1,9 +1,10 @@
- name: CI
+name: CI
 
 on:
   push:
-    branches: ["**"]     # toutes les branches
-  pull_request:           # et toutes les PR
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
 
 jobs:
   ci:
