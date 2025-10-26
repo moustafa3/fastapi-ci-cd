@@ -1,0 +1,7 @@
+# paramètres globaux
+target-version = "py311"
+line-length = 100
+
+# paramètres du linter
+[lint]
+select = ["E", "F", "I", "UP"]
