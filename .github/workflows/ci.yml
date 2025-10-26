@@ -31,7 +31,11 @@ jobs:
         run: ruff check .
 
       - name: Run tests (pytest)
-        run: pytest -q
+        shell: bash
+        run: |
+          set -euxo pipefail
+          export PYTHONPATH="${GITHUB_WORKSPACE}"
+          pytest -q
 
       - name: Build Docker image
         run: docker build -t fastapi-ci-cd:${{ github.sha }} .
